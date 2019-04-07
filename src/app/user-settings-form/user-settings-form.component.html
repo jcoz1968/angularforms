@@ -89,6 +89,9 @@
         [(ngModel)]="userSettings.notes"
       ></textarea>
     </div>
+    <div class="alert alert-danger" [hidden]="!postError">
+      {{ postErrorMessage }}
+    </div>
     <button class="btn btn-primary">Send</button>
   </form>
 </div>
