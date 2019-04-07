@@ -1,6 +1,6 @@
 <div class="container">
   <h2>User Settings</h2>
-  <form #form="ngForm">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
       <label for="name">Name</label>
       <input
@@ -9,8 +9,13 @@
         type="text"
         class="form-control"
         placeholder="Name"
+        (blur)="onBlur(nameField)"
         [(ngModel)]="userSettings.name"
+        required
+        #nameField="ngModel"
+        [class.field-error]="form.submitted && nameField.invalid"
       />
+      <div class="alert alert-danger" [hidden]="!form.submitted || nameField.valid">Enter a name</div>
     </div>
     <div class="form-check form-group">
       <input
