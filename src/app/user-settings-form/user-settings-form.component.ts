@@ -7,13 +7,15 @@ import { UserSettings } from './../data/user-settings';
   styleUrls: ['./user-settings-form.component.css']
 })
 export class UserSettingsFormComponent implements OnInit {
-  userSettings: UserSettings = {
+  originalUserSettings: UserSettings = {
     name: 'Coz',
     emailOffers: true,
     interfaceStyle: 'dark',
     subscriptionType: 'Annual',
     notes: 'here are some notes...'
   };
+
+  userSettings: UserSettings = { ...this.originalUserSettings };
 
   constructor() { }
 
