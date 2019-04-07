@@ -42,6 +42,10 @@
 
       </div>
 
+      <div class="form-group">
+         <rating [(ngModel)]='userRating' [max]='maxRating' [readonly]='isReadOnly'
+            name='userRating' id='userRating' [titles]="['one', 'two', 'three']"></rating>
+      </div>
 
 
     <div class="form-check form-group">
