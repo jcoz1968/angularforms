@@ -1,5 +1,6 @@
 import { UserSettings } from './user-settings';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -7,9 +8,10 @@ import { Observable, of } from 'rxjs';
 })
 export class DataService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  postUserSettingsForm(userSettings: UserSettings): Observable<UserSettings> {
-    return of(userSettings);
+  postUserSettingsForm(userSettings: UserSettings): Observable<any> {
+    return this.http.post('url', userSettings);
+    // return of(userSettings);
   }
 }
