@@ -9,6 +9,7 @@
         type="text"
         class="form-control"
         placeholder="Name"
+        (blur)="onBlur(nameField)"
         [(ngModel)]="userSettings.name"
         required
         #nameField="ngModel"
