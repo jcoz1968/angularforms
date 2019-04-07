@@ -23,16 +23,18 @@
       </div>
     </div>
 
-    <!-- <button
-      class="btn btn-primary"
-      [(ngModel)]="singleModel"
-      btnCheckbox
-      btnCheckboxTrue="On"
-      btnCheckboxFalse="Off"
-      name="singleModel"
-    >
-      {{ singleModel }}
-    </button> -->
+    <div class="form-group">
+      <label for="startDate">Start Date</label>
+      <input
+        type="text"
+        placeholder="Start Date"
+        class="form-control"
+        id="startDate"
+        name="startDate"
+        [(ngModel)]="startDate"
+        bsDatepicker
+      />
+    </div>
 
     <div class="form-check form-group">
       <input
