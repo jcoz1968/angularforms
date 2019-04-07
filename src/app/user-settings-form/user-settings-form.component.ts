@@ -11,6 +11,7 @@ import { DataService } from './../data/data.service';
 })
 export class UserSettingsFormComponent implements OnInit {
   startDate: Date;
+  startTime: Date;
   originalUserSettings: UserSettings = {
     name: null,
     emailOffers: null,
@@ -29,6 +30,7 @@ export class UserSettingsFormComponent implements OnInit {
 
   ngOnInit() {
     this.startDate = new Date();
+    this.startTime = new Date();
     this.subscriptionTypes = this.dataService.getSubscriptionTypes();
   }
 
